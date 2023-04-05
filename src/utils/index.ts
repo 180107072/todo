@@ -1,9 +1,10 @@
 import {Todo} from "../types";
 
 export const createKey = (todo: Todo) =>
-  [...todo.key.split("-"), todo.children ? todo.children.length + 1 : 1].join(
-    "-"
-  );
+  [
+    ...todo.key.split("-"),
+    todo.children ? todo.children.length + Math.random() * 10 : 1,
+  ].join("-");
 
 export const downloadFile = ({
   data,
